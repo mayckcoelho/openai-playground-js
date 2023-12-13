@@ -11,7 +11,12 @@
   "scripts": {
     "llm": "node index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "openai",
+    "langchain",
+    "javascript",
+    "sentment analysis"
+  ],
+  "author": "Mayck Coelho",
   "license": "ISC"
 }
