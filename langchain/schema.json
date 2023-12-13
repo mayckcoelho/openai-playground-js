@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "aggressiveness": {
+      "type": "integer",
+      "enum": [1, 2, 3, 4, 5],
+      "description": "describes how aggressive the statement is, the higher the number the more aggressive"
+    },
+    "sentiment": {
+      "type": "string",
+      "enum": ["negative", "neutral", "positive"],
+      "description": "describes the sentiment related with the sentence"
+    },
+    "reasoning": {
+      "type": "string",
+      "description": "explain, in a concise way, why you gave that sentiment and aggressiveness"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "spanish",
+        "english",
+        "french",
+        "german",
+        "italian",
+        "portuguese"
+      ]
+    }
+  },
+  "required": ["language", "sentiment", "aggressiveness", "reasoning"]
+}
