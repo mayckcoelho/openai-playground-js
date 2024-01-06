@@ -20,7 +20,10 @@ const chat = new ChatOpenAI({
   ],
 });
 
-module.exports = async function app(text) {
+module.exports = async function app() {
+  const text =
+    "Eu deveria estar muito irritado por que está muito tarde, mas meu sentimento é justamente o oposto!";
+
   const chain = createTaggingChain(schema, chat);
 
   const chatModelResult = await chain.run(text);

@@ -1,8 +1,14 @@
 require("dotenv").config();
 
-const app = require("./langchain");
+let app;
 
-const text =
-  "Eu deveria estar muito irritado por que está muito tarde, mas meu sentimento é justamente o oposto!";
+switch (process.env.TYPE) {
+  case "sentment_analysis":
+    app = require("./langchain/sentment_analysis");
+    break;
+  case "translator_prompt":
+    app = require("./langchain/translator_prompt");
+    break;
+}
 
-app(text);
+app();
