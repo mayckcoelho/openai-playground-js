@@ -1,4 +1,9 @@
-## Repo criado com o objetivo de experimentação das APIs do OpenAI
+## Obs: Repo criado com o objetivo de experimentação e estudo das APIs do OpenAI.
+
+## Fontes:
+
+- Curso LangChain for LLM Application Development: [DeepLearning.AI](https://learn.deeplearning.ai/)
+- [Docs Langchain](https://js.langchain.com/docs/get_started/introduction)
 
 # [LangChain](https://python.langchain.com/docs/get_started/introduction)
 
@@ -33,16 +38,14 @@ O código analisa mensagens de clientes relacionadas a avaliações de produtos.
 
 1.  **Dependências Importadas:**
 
-- `ChatPromptTemplate`: Uma classe que representa um modelo de prompt para interações de chat.
+    - `ChatPromptTemplate`: Uma classe que representa um modelo de prompt para interações de chat.
+    - `StructuredOutputParser`: Uma classe que ajuda a analisar e estruturar a saída da interação de chat.
+    - `z`: Uma biblioteca para validação de esquemas de objetos. Aqui, é utilizada para definir o esquema da estrutura desejada para analisar as mensagens do cliente.
 
-- `StructuredOutputParser`: Uma classe que ajuda a analisar e estruturar a saída da interação de chat.
+2.  **Função Principal (`app`):**
 
-- `z`: Uma biblioteca para validação de esquemas de objetos. Aqui, é utilizada para definir o esquema da estrutura desejada para analisar as mensagens do cliente.
-
-2. **Função Principal (`app`):**
-
-Dentro da função, é definido um esquema (`schema`) utilizando o Zod para especificar a estrutura desejada das informações a serem extraídas das mensagens do cliente. As informações incluem se o item foi comprado como presente, quantos dias demorou para o produto chegar e quais foram as informações sobre preço ou valor.
-Em seguida, é criado um parser de saída estruturada (`output_parser`) com base no esquema definido utilizando a classe `StructuredOutputParser`. O código então prepara um template de prompt (`prompt_template`) para extrair as informações específicas das mensagens do cliente usando o formato instrucional do parser.
-Um exemplo de avaliação do cliente (`customer_review`) é fornecido como entrada para o template, que é formatado conforme as instruções do template.
-A aplicação então chama a função `call` do objeto `chat` para obter a resposta do modelo de linguagem.
-Finalmente, a resposta é parseada utilizando o `output_parser` e o resultado é exibido no console.
+    Dentro da função, é definido um esquema (`schema`) utilizando o Zod para especificar a estrutura desejada das informações a serem extraídas das mensagens do cliente. As informações incluem se o item foi comprado como presente, quantos dias demorou para o produto chegar e quais foram as informações sobre preço ou valor.
+    Em seguida, é criado um parser de saída estruturada (`output_parser`) com base no esquema definido utilizando a classe `StructuredOutputParser`. O código então prepara um template de prompt (`prompt_template`) para extrair as informações específicas das mensagens do cliente usando o formato instrucional do parser.
+    Um exemplo de avaliação do cliente (`customer_review`) é fornecido como entrada para o template, que é formatado conforme as instruções do template.
+    A aplicação então chama a função `call` do objeto `chat` para obter a resposta do modelo de linguagem.
+    Finalmente, a resposta é parseada utilizando o `output_parser` e o resultado é exibido no console.
