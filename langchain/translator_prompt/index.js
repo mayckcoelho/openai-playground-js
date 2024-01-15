@@ -1,13 +1,6 @@
-const { ChatOpenAI } = require("langchain/chat_models/openai");
 const { ChatPromptTemplate } = require("langchain/prompts");
 
-const chat = new ChatOpenAI({
-  openAIApiKey: process.env.OPENAI_API_KEY,
-  temperature: 0.0,
-  modelName: "gpt-3.5-turbo",
-});
-
-module.exports = async function app() {
+module.exports = async function app(chat) {
   const template_string = `Translate the text that is delimited by <> 
 into a style that is {style}. Text: <{text}>`;
   const prompt_template = ChatPromptTemplate.fromTemplate(template_string);
